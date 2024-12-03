@@ -3,39 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Troll Người Yêu</title>
+    <title>Gửi bé iu của anh</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
             margin: 0;
+            background: linear-gradient(to bottom right, #ffcccc, #ffe6e6);
         }
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 18px;
             cursor: pointer;
+            border: none;
+            background-color: #ff69b4;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: #ff69b4;
+            animation: floatUp 5s infinite;
+            will-change: transform, opacity;
         }
         .message {
             position: absolute;
             font-size: 24px;
-            color: red;
-            animation: fadeIn 1s ease;
+            color: #ff1493;
+            animation: fadeInOut 3s ease;
+            will-change: opacity;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-150px); opacity: 0; }
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
         }
     </style>
 </head>
 <body>
-    <button id="trollButton">Nhấn vào đây</button>
-    <script src="troll.js"></script>
+    <button id="loveButton">Nhấn vào đây</button>
+    <audio id="loveAudio" src="love.mp3" loop></audio>
+    <script src="love.js"></script>
 </body>
 </html>
